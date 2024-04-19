@@ -25,24 +25,18 @@ namespace firstProjectCSharp
             questionList = new GoodList();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         //일반로그인
         private void button3_Click(object sender, EventArgs e)
         {
             if (IsPWRight(ELoginType.COMMON))
             {
-                questionList.label2.Text = "(사용자용)";
-                questionList.button1.Visible = false;
-                questionList.Show();
+                
+                GoodList commonQuestionList = new GoodList(); // 일반 사용자용 GoodList 인스턴스 생성
+                commonQuestionList.label2.Text = "(사용자용)";
+                commonQuestionList.button1.Visible = false;
+                commonQuestionList.Show();
             }
         }
 
@@ -51,9 +45,10 @@ namespace firstProjectCSharp
         {
             if (IsPWRight(ELoginType.MANAGER))
             {
-                questionList.label2.Text = "(관리자용)";
-                questionList.button1.Visible = true;
-                questionList.Show();
+                GoodList managerQuestionList = new GoodList(); // 관리자용 GoodList 인스턴스 생성
+                managerQuestionList.label2.Text = "(관리자용)";
+                managerQuestionList.button1.Visible = true;
+                managerQuestionList.Show();
             }
         }
 
